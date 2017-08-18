@@ -1,0 +1,12 @@
+
+  Simple tests of api.hh.ru
+    апи хэхэру
+
+    Scenario: Загрузка справочника регионов
+      Given load module HTTP::Tiny
+      And create object HTTP::Tiny
+      When request GET /areas
+      Then response is valid JSON
+      And area id=2 in country id=113 has name=Санкт-Петербург
+
+
